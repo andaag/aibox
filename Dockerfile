@@ -37,17 +37,6 @@ RUN python -m spacy download en
 ## API:
 RUN conda install flask
 
-## Kafka integrations:
-RUN conda install -c conda-forge/label/gcc7 kafka-python 
-#RUN apt-get install -y build-essential libsnappy-dev zlib1g-dev libbz2-dev libgflags-dev && \
-#    cd /tmp && \
-#    git clone https://github.com/facebook/rocksdb.git && \
-#    cd rocksdb  && \
-#    make -j8 install-shared INSTALL_PATH=/usr && \
-#    pip install pyrocksdb && \
-#    rm -rf /tmp/rocksdb
-#RUN pip install "faust[rocksdb, fast, statsd]"
-
 # IPython
 ARG NB_USER="jovyan"
 ARG NB_UID="1000"

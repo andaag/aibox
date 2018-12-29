@@ -1,6 +1,8 @@
 # AIBOX
 
-Simple dockerfile with cuda/sklearn/fastai/some stuff I need for pulling data from kafka
+Simple dockerfile with cuda/sklearn/fastai
+
+Dockerfile.kafka contains some stuff to pull data from kafka.
 
 ## Todo's
 
