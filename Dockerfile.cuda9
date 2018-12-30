@@ -37,6 +37,12 @@ RUN python -m spacy download en
 ## API:
 RUN conda install flask
 
+## Dask
+RUN conda install dask
+
+## Numba
+RUN conda install numba
+
 # IPython
 ARG NB_USER="jovyan"
 ARG NB_UID="1000"
