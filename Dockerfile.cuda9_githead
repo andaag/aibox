@@ -1,0 +1,5 @@
+FROM andaag/aibox_cuda9
+
+# docker build -t aibox-githead -f Dockerfile.cuda9_githead .
+
+RUN pip install git+git://github.com/fastai/fastai.git 
