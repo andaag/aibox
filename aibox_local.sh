@@ -4,10 +4,8 @@
 
 process_adjust() {
 	sleep 5
-	PID=$(pgrep -f 'docker.*aibox')
-	echo 1000 > /proc/$PID/oom_score_adj
+	pgrep -f 'docker.*aibox' | xargs -i echo echo 1000 ">" /proc/\{\}/oom_score_adj | bash
 	renice -n 19 -p $(pgrep -f jupyter-lab)
-	echo "Adjusted pid $PID to oom_score_adj 1000"
 }
 
 process_adjust &
