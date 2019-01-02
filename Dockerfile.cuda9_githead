@@ -5,8 +5,3 @@ FROM andaag/aibox_cuda9
 RUN pip install git+git://github.com/fastai/fastai.git 
 RUN conda install joblib
 RUN conda install memory_profiler line_profiler
-
-USER $NB_UID
-RUN mkdir -p /home/$NB_USER/.jupyter/lab/user-settings/@jupyterlab/apputils-extension
-RUN echo '{"theme": "JupyterLab Dark"}' > /home/$NB_USER/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
-USER root

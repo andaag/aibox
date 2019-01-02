@@ -43,6 +43,8 @@ RUN conda install -c pytorch -c fastai fastai
 ## Spacey:
 RUN python -m spacy download en
 
+## Feather format:
+RUN conda install -c conda-forge feather-format
 
 RUN jupyter notebook --generate-config
 RUN echo "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
