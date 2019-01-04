@@ -11,4 +11,4 @@ process_adjust() {
 process_adjust &
 
 
-nvidia-docker run --runtime=nvidia --rm --name aibox --network="host" -v /home/neuron/src/ml:/home/jovyan/work -v $HOME/tmp/pytorch:/home/jovyan/.torch/ aibox-githead
+nvidia-docker run --runtime=nvidia --rm --name aibox --ipc=host --network="host" -v /home/neuron/src/ml:/home/jovyan/work -v $HOME/tmp/pytorch:/home/jovyan/.torch/ aibox-githead
