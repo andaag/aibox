@@ -2,6 +2,25 @@ FROM andaag/aibox_cuda9
 
 # docker build -t aibox-githead -f Dockerfile.cuda9_githead .
 
+USER $NB_UID
 RUN pip install git+git://github.com/fastai/fastai.git 
-#RUN conda install joblib
+
+RUN conda install -c conda-forge nodejs
+#RUN conda install plotly
+RUN pip install plotly
 #RUN conda install memory_profiler line_profiler
+#
+
+RUN jupyter labextension install plotlywidget@0.6.0 --no-build
+# offline iplot support
+RUN jupyter labextension install @jupyterlab/plotly-extension@0.18.1 --no-build
+
+# JupyterLab chart editor support (optional)
+RUN jupyter labextension install jupyterlab-chart-editor@1.0 --no-build
+
+# Build extensions (must be done to activate extensions since --no-build is used above)
+RUN jupyter lab build
+
+RUN pip install cufflinks
+
+USER root
